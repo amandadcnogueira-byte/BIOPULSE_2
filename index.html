@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BIOPULSE | FLORA — Reator de algas FIAP School</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=3) }}">
+</head>
+
+<body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="flor" viewBox="0 0 100 100">
+            <g fill="currentColor">
+                <ellipse cx="50" cy="22" rx="14" ry="22" />
+                <ellipse cx="50" cy="22" rx="14" ry="22" transform="rotate(72 50 50)" />
+                <ellipse cx="50" cy="22" rx="14" ry="22" transform="rotate(144 50 50)" />
+                <ellipse cx="50" cy="22" rx="14" ry="22" transform="rotate(216 50 50)" />
+                <ellipse cx="50" cy="22" rx="14" ry="22" transform="rotate(288 50 50)" />
+            </g>
+            <circle cx="50" cy="50" r="12" fill="#ffd966" />
+        </symbol>
+        <symbol id="margarida" viewBox="0 0 100 100">
+            <g fill="#fff" stroke="#e8548c" stroke-width="2">
+                <ellipse cx="50" cy="20" rx="6" ry="20" />
+                <ellipse cx="50" cy="20" rx="6" ry="20" transform="rotate(30 50 50)" />
+                <ellipse cx="50" cy="20" rx="6" ry="20" transform="rotate(60 50 50)" />
+                <ellipse cx="50" cy="20" rx="6" ry="20" transform="rotate(90 50 50)" />
+                <ellipse cx="50" cy="20" rx="6" ry="20" transform="rotate(120 50 50)" />
+                <ellipse cx="50" cy="20" rx="6" ry="20" transform="rotate(150 50 50)" />
+                <ellipse cx="50" cy="20" rx="6" ry="20" transform="rotate(180 50 50)" />
+                <ellipse cx="50" cy="20" rx="6" ry="20" transform="rotate(210 50 50)" />
+                <ellipse cx="50" cy="20" rx="6" ry="20" transform="rotate(240 50 50)" />
+                <ellipse cx="50" cy="20" rx="6" ry="20" transform="rotate(270 50 50)" />
+                <ellipse cx="50" cy="20" rx="6" ry="20" transform="rotate(300 50 50)" />
+                <ellipse cx="50" cy="20" rx="6" ry="20" transform="rotate(330 50 50)" />
+            </g>
+            <circle cx="50" cy="50" r="13" fill="#ffd966" stroke="#e0a800" stroke-width="2" />
+        </symbol>
+        <symbol id="folha" viewBox="0 0 100 100">
+            <path d="M10 90C10 40 40 10 90 10 90 60 60 90 10 90Z" fill="currentColor" />
+            <path d="M10 90L70 30" stroke="#fff" stroke-width="3" fill="none" opacity=".6" />
+        </symbol>
+    </svg>
+    <header class="topo">
+        <a href="#home" class="logo"><svg class="ico girar">
+                <use href="#flor" />
+            </svg> BIOPULSE <small>FLORA</small></a>
+        <nav>
+            <a href="#home">Início</a><a href="#ar">Ar de SP</a><a href="#ia">IA</a><a href="#co2">CO₂</a><a
+                href="#flora">Flora brasileira</a><a href="#creditos">Créditos</a>
+        </nav>
+        <span class="pontos" title="Flores coletadas"><svg class="ico">
+                <use href="#flor" />
+            </svg> <b id="placar">0</b> <small id="nivel">Semente</small></span>
+    </header>
+    <div id="aviso" class="aviso" role="status" aria-live="polite"></div>
+    <main>
+        <!-- HOME -->
+        <section id="home" class="tela hero">
+            <p class="bio">BIOPULSE</p>
+            <h1>FLORA</h1>
+            <div class="margaridas">
+                <a class="mg" href="#ar"><svg>
+                        <use href="#margarida" />
+                    </svg><span class="dica"><b>Ar de São Paulo</b>Veja o índice de poluição do ar em 2025 e como o
+                        reator pode ajudar.</span></a>
+                <a class="mg" href="#ia"><svg>
+                        <use href="#margarida" />
+                    </svg><span class="dica"><b>Inteligência artificial</b>Como a IA coleta dados e ajusta o
+                        BioPulse.</span></a>
+                <a class="mg" href="#co2"><svg>
+                        <use href="#margarida" />
+                    </svg><span class="dica"><b>Árvore ou bio-reator?</b>Compare o CO₂ absorvido por dia.</span></a>
+            </div>
+            <p class="clique">Clique nas margaridas acima para entender mais sobre o nosso trabalho.</p>
+            <a class="btn" href="#flora">Curiosidades da flora brasileira</a>
+        </section>
+        <!-- AR -->
+        <section id="ar" class="tela bloco" hidden>
+            <a class="voltar" href="#home">← Voltar às margaridas</a>
+            <h2>Índice da poluição do ar em São Paulo — 2025</h2>
+            <p class="sub">O IQAr resume a qualidade do ar em um número: quanto menor, melhor. Compare a média de 2025
+                com a do ano anterior.</p>
+            <div class="grade" id="indices"></div>
+            <article class="cartao">
+                <h3>Como o reator melhora o ar</h3>
+                <p>As algas do BioPulse absorvem CO₂ na fotossíntese e liberam oxigênio. Com mais luz, mais CO₂
+                    disponível e temperatura adequada, o reator trabalha mais. A tela “CO₂” mostra o cálculo.</p>
+            </article>
+            <p class="nota">Valores de exemplo para a apresentação. Troque pelos dados oficiais (por exemplo, da CETESB)
+                no começo do script.js.</p>
+        </section>
+        <!-- IA -->
+        <section id="ia" class="tela bloco" hidden>
+            <a class="voltar" href="#home">← Voltar às margaridas</a>
+            <h2>A IA do BioPulse</h2>
+            <p class="sub">A IA coleta dados do ambiente e do reator e decide como ajustá-lo. Mude os valores abaixo
+                para ver a lógica funcionando.</p>
+            <div class="painel">
+                <div class="controles">
+                    <label>Temperatura do ar: <output id="vTa">28</output> °C<input type="range" id="ta" min="10"
+                            max="40" value="28"></label>
+                    <label>Temperatura do BioPulse: <output id="vTr">26</output> °C<input type="range" id="tr" min="10"
+                            max="40" value="26"></label>
+                    <label>CO₂ na região: <output id="vCo">480</output> ppm<input type="range" id="co" min="400"
+                            max="1000" value="480"></label>
+                </div>
+                <div>
+                    <div class="medidor">
+                        <div id="barra"></div>
+                    </div>
+                    <p class="status" id="decisao" aria-live="polite"></p>
+                </div>
+            </div>
+        </section>
+        <!-- CO2 -->
+        <section id="co2" class="tela bloco" hidden>
+            <a class="voltar" href="#home">← Voltar às margaridas</a>
+            <h2>CO₂ absorvido em um dia</h2>
+            <p class="sub">Uma árvore comum absorve em média cerca de 22 kg de CO₂ por ano, ou 60 g por dia. Aumente o
+                volume do reator e compare.</p>
+            <div class="painel">
+                <div class="controles">
+                    <label>Volume do reator: <output id="vVol">100</output> L<input type="range" id="vol" min="10"
+                            max="500" step="10" value="100"></label>
+                    <label>Produção de algas: <output id="vProd">0.5</output> g/L por dia<input type="range" id="prod"
+                            min="0.1" max="1.5" step="0.1" value="0.5"></label>
+                    <p class="status">Cada grama de alga seca fixa cerca de 1,83 g de CO₂. Resultado: <b id="res"></b>
+                    </p>
+                </div>
+                <div class="grafico"><canvas id="canvas" width="560" height="320" role="img"
+                        aria-label="Barras: árvore comum e bio-reator"></canvas></div>
+            </div>
+            <p class="sub">Imagine muitos reatores espalhados por cidades: o efeito se soma e pode ajudar o ar de todo o
+                mundo. Os números são estimativas.</p>
+        </section>
+        <!-- FLORA BRASILEIRA -->
+        <section id="flora" class="tela bloco" hidden>
+            <a class="voltar" href="#home">← Voltar às margaridas</a>
+            <h2>Curiosidades da flora brasileira</h2>
+            <article class="cartao jardim-card">
+                <h3>Seu jardim: <span id="nivel-nome">Semente</span></h3>
+                <p id="jardim-txt"></p>
+                <div class="progresso">
+                    <div id="prog"></div>
+                </div>
+                <div class="canteiro" id="canteiro" aria-label="Flores ganhas"></div>
+                <button type="button" class="btn btn-sec" id="reiniciar">Reiniciar jardim</button>
+            </article>
+            <p class="sub">Toque em cada flor para descobrir uma curiosidade e ganhar uma flor para o seu jardim.</p>
+            <div class="grade" id="curiosidades"></div>
+            <h2 class="espaco">Quiz da flora</h2>
+            <div class="cartao quiz" id="quiz-box"></div>
+        </section>
+        <!-- CREDITOS -->
+        <section id="creditos" class="tela bloco" hidden>
+            <a class="voltar" href="#home">← Voltar às margaridas</a>
+            <h2>Créditos</h2>
+            <p class="sub">Projeto BIOPULSE · grupo FLORA · 1º ano do Ensino Médio Técnico em IA · FIAP School</p>
+            <div class="grade" id="equipe"></div>
+        </section>
+    </main>
+    <footer><svg class="ico">
+            <use href="#flor" />
+        </svg> BIOPULSE · Projeto FLORA · FIAP School</footer>
+    <button id="chat-abrir" class="chat-fab" aria-label="Abrir chat" aria-expanded="false" aria-controls="chat"><svg
+            class="ico">
+            <use href="#flor" />
+        </svg></button>
+    <section id="chat" class="chat" hidden aria-label="Chat FiapSchool bot">
+        <header><b>FiapSchool bot</b><button id="chat-fechar" aria-label="Fechar chat">✕</button></header>
+        <div id="chat-msgs" class="chat-msgs" aria-live="polite"></div>
+        <div class="chat-form"><input id="chat-input" type="text" placeholder="Digite sua pergunta..."
+                autocomplete="off"><button id="chat-enviar" class="btn">Enviar</button></div>
+    </section>
+    <script src="{{ url_for('static', filename='script.js', v=3) }}"></script>
+</body>
+
+</html>
